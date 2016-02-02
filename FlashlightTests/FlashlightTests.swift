@@ -52,6 +52,20 @@ class FlashlightTests: XCTestCase {
             XCTAssert(false, "ViewController does not match expected state.")
         }
 
+        viewController.swiped(self)
+        
+        let stateAfterThirdToggle = checkStateForVC(viewController)
+        
+        viewController.swiped(self)
+        
+        let stateAfterFourthToggle = checkStateForVC(viewController)
+        
+        if !stateAfterThirdToggle || !stateAfterFourthToggle {
+            XCTAssert(false, "ViewController does not match expected state.")
+        }
+
+        
+        
     }
     
     func checkStateForVC(vc: ViewController) -> Bool {

@@ -23,9 +23,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func buttonTapped(sender: AnyObject) {
-        
+    
+    func toggle() {
         if isOn {
             self.isOn = false
             
@@ -40,8 +39,14 @@ class ViewController: UIViewController {
             self.button.setTitleColor(UIColor.blackColor(), forState: .Normal)
             self.view.backgroundColor = UIColor.whiteColor()
         }
-    
     }
-
+    
+    @IBAction func swiped(sender: AnyObject) {
+        toggle()
+    }
+    
+    @IBAction func buttonTapped(sender: AnyObject) {
+        toggle()
+    }
 }
 
